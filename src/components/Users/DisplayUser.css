@@ -1,0 +1,35 @@
+.UsersLists {
+  list-style: none;
+}
+.user_list {
+  border: 1px solid gray;
+
+  border-radius: 10px;
+  padding: 0.9rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+caption {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+table {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+  height: 2rem;
+}
+td,
+th {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+@media (max-width: 480px) {
+  td,
+  th {
+    font-size: 0.8rem;
+  }
+}

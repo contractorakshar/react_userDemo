@@ -1,0 +1,12 @@
+.main_container {
+  min-width: 65vw;
+  margin: 1rem 0;
+  border-radius: 10px;
+  background-color: rgba(125, 127, 129, 0.993);
+}
+
+.main_container h1,
+.main_container span {
+  color: white;
+  margin: 1rem 0;
+}
