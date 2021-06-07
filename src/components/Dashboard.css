@@ -1,8 +1,12 @@
 .main_container {
   min-width: 65vw;
+  width: 75%;
   margin: 1rem 0;
   border-radius: 10px;
-  background-color: rgba(125, 127, 129, 0.993);
+  background: #5a5454;
+  background: -moz-linear-gradient(to right, #5a5454 0%, #333333 100%);
+  background: -webkit-linear-gradient(to right, #5a5454 0%, #333333 100%);
+  background: linear-gradient(to right, #5a5454 0%, #333333 100%);
 }
 
 .main_container h1,

@@ -9,27 +9,9 @@
   margin: 1rem 0;
   text-align: left;
 }
-caption {
-  margin-bottom: 2rem;
-  font-weight: bold;
-  font-size: 2rem;
+.min_Width {
+  min-width: 40%;
 }
-table {
-  height: 100%;
-  width: 100%;
-  border-collapse: collapse;
-}
-td {
-  height: 2rem;
-}
-td,
-th {
-  border-collapse: collapse;
-  border: 1px solid black;
-}
-@media (max-width: 480px) {
-  td,
-  th {
-    font-size: 0.8rem;
-  }
-}
+/* .table_container {
+  height: 250px;
+} */

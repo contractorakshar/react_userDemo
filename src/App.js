@@ -28,30 +28,32 @@ function App() {
       <UserDisplayList
         users={usersLists}
         deleteClickHandler={deleteHandler}
-        arraySorting={arraySorting}
+        // arraySorting={arraySorting}
       />
     );
   };
-  const arraySorting = () => {
-    usersLists.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-    setUsersList(usersLists);
-    // console.log(usersLists);
-    return (
-      <UserDisplayList
-        users={usersLists}
-        deleteClickHandler={deleteHandler}
-        arraySorting={arraySorting}
-      />
-    );
-  };
+
+  // const arraySorting = () => {
+  //   usersLists.sort((a, b) => {
+  //     if (a.name < b.name) {
+  //       return -1;
+  //     }
+  //     if (a.name > b.name) {
+  //       return 1;
+  //     }
+  //     return 0;
+  //   });
+  //   setUsersList(usersLists);
+  //   console.log(usersLists);
+  // return (
+  //   <UserDisplayList
+  //     users={usersLists}
+
+  //     deleteClickHandler={deleteHandler}
+  //     arraySorting={arraySorting}
+  //   />
+  // );
+  // };
   return (
     <div className="App">
       <Dashboard data={usersLists} />
@@ -59,7 +61,7 @@ function App() {
       <UserDisplayList
         users={usersLists}
         deleteClickHandler={deleteHandler}
-        arraySorting={arraySorting}
+        // arraySorting={arraySorting}
       />
     </div>
   );

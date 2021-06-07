@@ -1,69 +1,99 @@
 import React from "react";
 import Card from "../UI/Card";
+
+import { DataGrid } from "@material-ui/data-grid";
+import DeleteIcon from "@material-ui/icons/Delete";
 import "./DisplayUser.css";
+
 const UserDisplayList = (props) => {
-  if (props.users.length > 0) {
-    return (
-      <Card>
-        <table>
-          <caption>User Data</caption>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Last name</th>
-              <th>Age</th>
-              <th>Maths</th>
-              <th>Science</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.users.map((data) => (
-              <tr
-                key={data.id}
-                onClick={() => {
-                  props.deleteClickHandler(data.id);
-                }}
-              >
-                <td>{data.name}</td>
-                <td>{data.lname}</td>
-                <td>{data.age}</td>
-                <td>{data.maths}</td>
-                <td>{data.sci}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {/* <ul className="UsersLists">
-          {props.users.map((data) => (
-            <li
-              key={data.id}
-              className="user_list"
+  const rows = props.users;
+  const columns = [
+    { field: "name", headerName: "Name", width: 150 },
+    { field: "lname", headerName: "Last Name", width: 150 },
+    { field: "age", headerName: "Age", width: 120 },
+    { field: "maths", headerName: "Maths", width: 120 },
+    { field: "sci", headerName: "Science", width: 130 },
+    {
+      field: "Actions",
+      width: 100,
+      sortable: false,
+      headerName: "",
+      disableClickEventBubbling: true,
+      renderCell: (data) => {
+        return (
+          <button>
+            <DeleteIcon
               onClick={() => {
                 props.deleteClickHandler(data.id);
               }}
-            >
-              Name: {data.name}
-              <br /> Last Name: {data.lname}
-              <br /> Age: {data.age}
-              <br />
-              Maths:{data.maths} Sci: {data.sci}
-            </li>
-          ))}
-        </ul>
-        <button
-          onClick={() => {
-            props.arraySorting();
-          }}
-        >
-          Sort
-        </button> */}
-        <button
-          onClick={() => {
-            props.arraySorting();
-          }}
-        >
-          Sort
-        </button>
+            />
+          </button>
+        );
+      },
+    },
+    { field: "id", hide: true },
+  ];
+
+  // const searchHandler = (event) => {
+  //   console.log(props.users);
+
+  //   let obj = props.users.find((o) => o.name === event.target.value);
+  //   // let obj = props.users.filter((obj) => obj.name === event.target.value);
+  //   console.log(obj);
+  // };
+  if (props.users.length > 0) {
+    return (
+      <Card>
+        <h1>User Data</h1>
+        <div className="table_container">
+          <DataGrid autoHeight rows={rows} columns={columns} />
+        </div>
+        {/* <TextField
+          type="search"
+          placeholder="Search here"
+          fullWidth
+          onChange={searchHandler}
+        />
+        <TableContainer component={Paper} className="min_Width">
+          <Table className="min_Width">
+            <TableHead>
+              <TableRow>
+                <TableCell
+                  onClick={() => {
+                    props.arraySorting();
+                  }}
+                >
+                  Name
+                </TableCell>
+                <TableCell align="center">Last name</TableCell>
+                <TableCell align="center">Age</TableCell>
+                <TableCell align="center">Maths</TableCell>
+                <TableCell align="center">Science</TableCell>
+                <TableCell align="center">Action</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {props.users.map((data) => (
+                <TableRow key={data.id}>
+                  <TableCell component="th" scope="row">
+                    {data.name}
+                  </TableCell>
+                  <TableCell align="center">{data.lname}</TableCell>
+                  <TableCell align="center">{data.age}</TableCell>
+                  <TableCell align="center">{data.maths}</TableCell>
+                  <TableCell align="center">{data.sci}</TableCell>
+                  <TableCell align="center">
+                    <DeleteIcon
+                      onClick={() => {
+                        props.deleteClickHandler(data.id);
+                      }}
+                    />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer> */}
       </Card>
     );
   }
